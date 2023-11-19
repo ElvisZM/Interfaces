@@ -1,0 +1,1342 @@
+:root {
+    --fondo-desplegable: rgb(255,255,255,0.5);
+}
+
+*{  /*Doy unas reglas generales para todo mi contenido*/
+    text-decoration: none; /*No quiero que ningun elemento tenga subrayado o decoracion por defecto*/
+    margin: 0;/*No quiero que tenga margenes exteriores*/
+    padding: 0;/*No quiero que tenga margenes interiores*/
+    box-sizing: border-box;
+    
+}
+
+.container-menu{ /*Trabajo con mi container que contiene mi header*/
+    width: 90%; /*Quiero que mi contenedor tenga un ancho de 90%*/
+    height: auto; /*Quiero que mi contenedor tenga una altura automatica segun su contenido*/
+    margin: 1% auto; /*Quiero que los margenes superior e inferior sean de 5px para separarlos un poco y los laterales automáticos, haciendo que el container se ajuste automaticamente en los laterales al centro del container.*/
+    /*border: 1px solid black; */   
+}
+
+.header{    /*Trabajo con mi header que contiene mi logo y mi menu*/
+    display: flex; /*Al usar flex en mi header se me pone un elemento al lado del otro*/
+    flex-direction: row; /*Indico que se alineen en filas, que es como viene por defecto*/
+    flex-wrap: wrap; /*Si algo se sale de mi caja, lo pone debajo*/
+    align-items: center; /*Centro verticalmente mis elementos del header*/
+    /*border: 1px solid black;*/
+    height: auto; /*Le doy una altura para que se centren mis elementos en el header*/
+}
+
+.logo-signup{
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;  
+}
+
+.logo-signup > a > img {
+    display: flex;
+    height: 8rem;
+    justify-content: end;
+}
+
+.logo-signup > h4 {
+    font-weight: lighter;
+    color: #1a1d32;
+}
+
+.container-formulario {
+    width: 50%;
+    margin-top: 6%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15%;
+}
+
+.formulario{
+    width: 100%;
+    color: #1a1d32;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto 19%;
+}
+
+.formulario > h1{
+    font-weight: lighter;
+    
+}
+
+.formulario > label {
+    display: block;
+    margin-top: 5%;
+}
+
+.formulario > label > h4{
+    font-weight:600;
+}
+
+.formulario > input {
+    margin-top: 2%;
+    width: 60%;
+    padding: 2.5%;
+    border-radius: 10px;
+}
+
+.formulario > button {
+    display: block;
+    margin-top: 4%;
+    width: 60%;
+    padding: 2.5%;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background-color: rgb(48, 124, 126, 0.938);
+    color: white;
+    cursor: pointer;
+}
+
+.formulario > p {
+    margin: 5% 0;
+    width: 60%;
+    font-size: small;
+}
+
+.formulario > p > a{
+    color: #1a1d32;
+}
+
+
+.logo{
+    flex-grow: 1; /*Lo utilizo para que mi elemento flex se expanda para llenar el espacio disponible, es parecido al tamaño que se asigna en grid-template-columns en grid*/
+    flex-basis: auto; /*Le doy un tamaño automatico a nivel de flexbox, ajusto su ancho al contenido*/
+    padding: 5px; /*Quiero que su contenido se despegue 5 pixeles en su margen interior a su borde (borde logo) por todos los lados*/
+    /*margin-left: 20px; /*Quiero que se despegue 20 pixeles en su margen exterior al borde de header*/
+}
+
+.menu-expansible {
+
+    flex-grow: 1; 
+    flex-basis: 80%; /*Le doy un tamaño por defecto del 80% al ancho del container*/
+    height: 100%; /*Dentro de la altura del container le doy una altura del 100% para que se ajuste desde arriba hasta abajo*/
+
+}
+
+.menu-expansible ul {
+    display: flex; /*Le indico que los elementos dentro de ul se pongan en flex y esto hara que se pongan uno al lado del otro*/
+    flex-direction: row; /*Aunque es su direccion por defecto, lo indicamos*/
+    flex-wrap: wrap; /*Por si acaso se sale algo de la caja, lo pone debajo*/
+    align-items: center; /*Alineo los elementos verticalmente para que se pongan en el centro*/
+    justify-content: space-between; /*Indico que mis elementos tengan espacio entre ellos pero los de inicio y fin se peguen a los bordes*/
+    height: 100%; /*Pongo altura 100% para que ocupe toda la altura*/
+    list-style: none; /*Quito los estilos de los enlaces y a la lista para que se quiten los puntitos*/
+}
+
+.menu-expansible a { /*Ahora me meto a trabajar en mis enlaces*/
+    text-transform: uppercase; /*Transformo los textos a mayúscula*/
+    color: #262b4f; /*Pongo mi texto en azul oscuro*/
+    background-color: white;
+    padding: 15px; /*Pongo un padding para que halla separacion con los diferentes enlaces*/
+    transition: all 300ms; /*Sirve para que cuando ponga el menu con :hover los cambios visuales se hagan de manera suave*/  
+}
+
+.menu-expansible a:hover{ /*Activo mi hover en mi menu para que al pasar el raton por encima se active*/
+    background-color: pink; /*Pongo el fondo de los elementos del menu en rosa cuando pase el raton por encima de ellos*/
+    color: white; /*Pongo mis letras en blanco para que queden mas bonitas con el fondo rosa*/
+}
+
+.menu-expansible li{ /*Trabajo con los li de mi menu-expansible*/
+    display: flex; /*Indico que los elementos li se comporten como un contenedor flex*/
+    flex-direction: column; /*Esta vez indico que la dirección de los elementos li sean de tipo columna*/
+    position: relative; /*Basicamente se aplica el position relative para que los hijos que en este caso es el submenu, tengan este elemento como referencia*/
+}
+
+.submenu{ /*Me meto a trabajar con mi submenu y mi submenulogin*/
+    display: none; /*Oculto inicialmente los elementos del submenu*/
+    position: absolute; /*Posiciono el submenu de forma absoluta con respecto a su padre que tiene posicion relative, si su padre no fuese relativo el elemento se coloca en relacion al documento.*/
+    z-index: 1; /*Con esta propiedad hacemos que el submenu se superponga del resto de elementos, para que destaque.*/
+    left: 0; /*Alineo mi submenu a la izquierda*/
+    top: 100%; /*Indico que el submenú aparezca justo despues de la parte inferior del elemento menu principal*/
+    text-align: left; /*Alineo mi texto a la izquierda*/
+    
+}
+
+.login {
+    position:relative;
+}
+
+.submenulogin {
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+    top:100%;
+    right:0%;
+    width: 220%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+.submenulogin > li {
+    margin: auto;
+    text-align: left;
+    background-color: white;
+    z-index:1;
+}
+
+.submenulogin > li > i{
+    padding-top: 5%;
+    text-align: center;
+}
+
+.submenulogin > li > input {
+    border-radius: 15px;
+    text-align: center;
+    width: 58%;
+    margin-left: 21%;
+    padding: 3%;
+}
+
+.submenulogin > li > a > button {    /*Me meto a trabajar con mi boton de "Acceder" en especifico mediante su id*/
+    width: 100%;
+    padding: 3%;
+    font-size: large;
+    background-color: rgb(255, 160, 122, 1);
+    /*background: linear-gradient(to bottom, #262b4f 0%, rgba(48, 124, 126, 0.938) 100%); /*Con la funcion linear-gradient dentro del background, puedo hacer que el boton empiece por un color y termine en otro. En esta línea indico que se ejecutará desde arriba hacia abajo de modo que empieze por el color azul marino y termine en un azul clarito*/
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.submenulogin > li > a {
+    width: 90%;
+    margin-left: 5%;
+    border-radius: 15px;
+
+}
+
+
+.submenulogin > li > h4 {
+    margin-top: 5%;
+    padding-left: 3%;
+}
+
+.submenulogin > li > p {
+    margin-top: 3%;
+    padding-left: 3%;
+    margin-bottom: 5%;
+}
+
+#ó {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.google-apple > button{
+    width: 40%;
+    padding: 3%;
+    border-radius: 15px;
+    margin-left: 6%; 
+    cursor: pointer;
+}
+
+#parrafo-google-apple{
+    margin-top: 0;
+    margin-left: 5%;
+}
+
+
+
+.menu-expansible li .submenu{ /*Selecciono todos los elementos con la clase submenu que son descendientes del elemento li de menu-expansible, es decir, selecciono submenu nuevamente.*/
+    display: none; /*Indico con esta propiedad que los elementos estarán ocultos inicialmente, de algún modo en .submenu el display:none se anula por ninguna razon aparente, por eso tengo que especificar esto de nuevo*/
+}
+
+.menu-expansible li .submenulogin{ /*Selecciono todos los elementos con la clase submenulogin que son descendientes del elemento li de menu-expansible, es decir, selecciono submenulogin nuevamente.*/
+    display: none; /*Indico con esta propiedad que los elementos estarán ocultos inicialmente, de algún modo en .submenulogin el display:none se anula por ninguna razon aparente, por eso tengo que especificar esto de nuevo*/
+}
+
+.menu-expansible li:hover .submenu{ /*Indico de esta manera que al pasar el raton por encima de mis <li> del menu-expansible, se despliegue el submenu*/
+    display: block; /*Poniendo el display en tipo bloque hago que el submenu sea visible mientras el este en hover, es decir, mientras tenga mi raton por encima*/
+}
+
+.menu-expansible li:hover .submenulogin{ /*Indico de esta manera que al pasar el raton por encima de mis <li> del menu-expansible, se despliegue el submenulogin*/
+    display: block; /*Poniendo el display en tipo bloque hago que el submenu sea visible mientras el este en hover, es decir, mientras tenga mi raton por encima*/
+}
+
+.submenulogin input{    /*Me meto a trabajar con los campos input de mi submenulogin*/
+    width: 100%;    /*Ajusto la anchura de los input al 100% de la anchura del submenulogin*/
+    height: auto;   /*Ajusto una altura automática según su contenido*/
+    margin-top: 3px;    /*Le doy un poquito de margen hacia arriba para separarlo de los iconos*/
+    margin-bottom: 10px;   /*Le doy también un poquito de margen hacia abajo para separarlo de los iconos también*/
+}
+
+
+.submenulogin a{
+    text-transform: initial; /*Con esta propiedad anulo las mayúsculas en el submenulogin que estaban definidas anteriormente para todos los enlaces*/
+    padding:0;  /*Quito los margenes interiores*/
+    margin:0;   /*Quito los margenes exteriores*/
+    background-color: rgb(255, 160, 122, 0.2);
+}
+
+.submenulogin a:hover{ /*En este apartado indico lo que ocurre cuando coloco mi cursor encima de los enlaces del submenulogin*/
+    background-color: white;
+    color: #262b4f;
+}
+
+.carrusel{
+    width: 90%;
+    height: auto;
+    margin: 50px auto 0;
+    overflow: hidden;
+}
+
+.carrusel ul{
+    display: flex;
+    padding: 0;
+    width: 500%;
+    animation: carrusel 20s infinite alternate ease-in-out;
+}
+
+.carrusel li{
+    width: 100%;
+    list-style: none;
+    position: relative;
+}
+
+.carrusel img{
+    width: 100%;
+    height: auto;
+}  
+
+.texto1 {
+    position: absolute;
+    text-align: left;
+    width: 40%;
+    top: 50px;
+    color: white;
+    padding: 40px;
+}
+
+.texto1 h2 {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 60px;
+}
+
+.texto1 p {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 80%;
+    margin-top: 10px;
+}
+
+.texto1 button{
+    width: 25%;
+    padding: 10px;
+    margin-top: 50px;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}
+
+.texto h2 {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 60px;
+}
+
+.texto p {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 80%;
+    margin-top: 10px;
+}
+
+.texto button {
+    width: 25%;
+    padding: 10px;
+    margin-top: 50px;
+    background-color: #262b4f;
+    color: white;
+}
+
+.texto {
+    position: absolute;
+    text-align: left;
+    width: 40%;
+    top: 50px;
+    color: #262b4f;
+    padding: 40px;
+}
+
+@keyframes carrusel{
+    0% {margin-left: 0;}
+    20% {margin-left: 0;}
+
+    25% {margin-left: -100%;}
+    45% {margin-left: -100%;}
+    
+    50% {margin-left: -200%;}
+    70% {margin-left: -200%;}
+    
+    75% {margin-left: -300%;}
+    100% {margin-left: -300%;}
+}
+
+.text-topventas, .text-promos {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    color:#262b4f;
+    width: 90%;
+    margin: 4% auto;
+    margin-bottom: 0;
+}
+
+.top__productos {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    width: 90%;
+    margin: 1% auto;
+    padding-top: 1%;
+    gap: 1%;
+
+}
+
+.top__productos__producto {
+    border: 1px solid rgb(211,211,211,0.5);
+    padding: 16px;
+        
+}
+
+.productos__producto-imagen{
+    margin: 5% 20%;
+    width: 140px;
+}
+
+.productos__producto-texto {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #262b4f;
+}
+
+.productos__producto-texto:hover {
+    color: gray;
+}
+
+.productos__producto-valoracion {
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+
+.promociones {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 90%;
+    margin: 1% auto;
+    gap: 1%;
+}
+
+.promocion {
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+.promocion > .ofer-imag{
+position: relative;
+}
+
+.promocion > .ofer-imag img{
+    width: 100%;
+}
+
+.promo-text {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#promo-text-arriba {
+    display: inline;
+    font-size: small;
+    font-weight: bold;
+    background-color: orange;
+    padding: 1%;
+    color: white;
+}
+
+#promo-text-abajo {
+    margin-top: 27%;
+    padding-left:3%;
+    color: #262b4f;
+}
+/**/
+.descripcion_body {
+    width: 100%;
+    background-color: rgb(255, 160, 122, 0.2);
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.descripcion_body-texto {
+    display: inline-block;
+    width: 90%;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    padding-left: 20%;
+    padding-right: 20%;
+    color: #1a1d32;
+
+}
+
+.descripcion_body-texto > h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.descripcion_body-texto > p {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+
+
+
+
+.footer {
+    width: 100%;
+    background-color: #262b4f;
+    color: white;
+    margin-top: 4%;
+
+}
+
+a {
+    color: white;
+}
+
+.contenedorpie{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 2% 2.3fr 2% 0.3fr 2% 5%;
+    grid-template-areas: 
+        "farma farma farma farma"
+        "linea1 linea1 linea1 linea1"
+        "servicio legal psur siguenos"
+        "linea2 linea2 linea2 linea2"
+        "entregas entregas confianza opinion"
+        "linea3 linea3 linea3 linea3"
+        "pago pago pago pago"
+    ;
+    width: 90%;
+    margin: 1% auto;
+}
+
+.mifarma {
+    grid-area: farma;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 3% auto;
+}
+
+.mifarma > p {
+    align-self: end;
+}
+
+.mifarma > img {
+    width: 8%;
+}
+
+.linea-top {
+    grid-area: linea1;
+}
+
+.linea-medium {
+    grid-area: linea2;
+}
+
+.linea-bottom {
+    grid-area: linea3;
+}
+
+.servicio {
+    grid-area: servicio;
+}
+
+.contenedorpie h2 {
+    padding-bottom: 4%;
+}
+
+.contenedorpie p {
+    padding-bottom: 4%;
+}
+
+.mapa {
+    margin-top: 2%;
+    width: 80%;
+    height: 50%;
+}
+
+.legal {
+    grid-area: legal;
+}
+
+.psur {
+    grid-area: psur;
+}
+
+.siguenos i{
+    grid-area: siguenos;
+    padding-right: 3%;
+}
+
+.siguenos > p {
+    margin-top: 5%;
+}
+
+
+.entregas {
+    grid-area: entregas;   
+}
+
+.entregas p {
+    display: inline-flex;
+    margin-right: 2%;
+    margin-top: 3%;
+    
+}
+
+.confianza {
+    grid-area: confianza;
+}
+
+.opiniones {
+    grid-area: opinion;
+}
+
+.pago {
+    grid-area: pago;
+    display: flex;
+    justify-content: space-between;
+}
+
+.prod-contenedor {
+    width: 100%;
+    color: #1a1d32;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.prod-iraltone {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 0.2fr repeat(2, 1fr) 1fr;
+    width: 85%;
+    margin: 1% auto;
+    gap: 3% 5%;
+    
+}
+.titulo {
+    grid-column: 1/3;
+    grid-row: 1/2;
+}
+
+.imagen {
+    grid-column: 1/2;
+    grid-row: 2/4;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 0.4fr;
+    gap: 1%;
+}
+
+.imagen > #img1i {
+    grid-column: 1/4;
+    grid-row: 1/2;
+    width: 100%;
+}
+
+.imagen > #img1m{
+    grid-column: 1/4;
+    grid-row: 1/2;
+    width: 70%;
+}
+
+.imagen > #img2m{
+    grid-column: 1/2;
+    grid-row: 2/3;
+    width: 100%;
+    height: 65%;
+}
+
+.imagen > #img2s{
+    grid-column: 1/2;
+    grid-row: 2/3;
+    width: 100%;
+    height: 60%;
+}
+
+.imagen > #img1 {
+    grid-column: 1/4;
+    grid-row: 1/2;
+    width: 40%;
+    margin-left: 30%;
+}
+
+.imagen > #img2 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    width: 100%;
+}
+
+.imagen > #img3 {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    width: 100%;
+}
+
+.imagen > #img4 {
+    grid-column: 3/4;
+    grid-row: 2/3;
+    width: 100%;
+}
+
+.compra {
+    grid-column: 2/3;
+    grid-row: 2/4;
+    display: grid;
+    grid-template-rows: 0.1fr 0.3fr 0.8fr 2fr;
+}
+
+.precio {
+    grid-row: 1/2;
+}
+
+.cantidad {
+    grid-row: 2/3;
+}
+
+.psur-cash{
+    grid-row: 3/4;
+}
+
+.envio {
+    grid-row: 4/5;
+}
+
+.opiniones-prod {
+    grid-column: 2/3;
+    grid-row: 4/5;
+}
+
+.detalles {
+    grid-column: 1/2;
+    grid-row: 4/5;
+}
+
+.titulo > h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2.25rem;
+    font-weight: lighter;
+}
+
+.titulo > p{
+    color:#969696;
+}
+
+.titulo > p > a{
+    color: #969696;
+}
+
+.titulo > p > a:hover{
+    color: lightpink;
+}
+
+
+.compra > .precio {
+    display: flex;
+    justify-content: space-between;
+}
+
+.precio > h2 {
+    font-size: xx-large;
+}
+
+.precio > h4 {
+    color: #757575;
+    font-weight: lighter;
+}
+
+.cantidad > h4 {
+    display: block;
+    color: #129474;
+    text-align: right;
+}
+
+.cantidad > label > h4 {
+    margin-top: 2%;
+}
+
+.cantidad > input {
+    margin-top: 3%;
+    height: 50%;
+    width: 20%;
+    text-align: center;
+    font-size: large;
+    border-radius: 20px;
+}
+
+.cantidad > button {
+    margin-left: 1%;
+    height: 52%;
+    width: 78%;
+    background-color:rgba(48, 124, 126, 0.938);
+    border-radius: 20px;
+    color: white;
+    font-size: large;
+    padding-top: 3%;
+    padding-bottom: 4%;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.psur-cash > h4{
+    color:rgba(48, 124, 126, 0.938);
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.cash {
+    border: 1px solid rgb(225,242,239,0.5);
+    background-color: rgb(225,242,239,0.5);
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.cash > p{
+    padding: 2%;
+}
+
+.cash > p > i {
+    margin-right: 1.5%;
+}
+
+.envio-detalle {
+    border: 1px solid rgba(48, 124, 126, 0.938);
+    border-radius: 10px;
+    padding-top: 3%;
+}
+
+.envio-detalle > p {
+    padding: 2%;
+    margin-left: 3%;
+}
+
+.envio-detalle > p >i {
+    margin-right: 1.5%;
+}
+
+.tarjetas {
+    border-top: 1px solid rgba(48, 124, 126, 0.938);
+    margin-top: 2%;
+}
+
+.tarjetas > p {
+    display: flex;
+    margin-top: 3%;
+    margin-left: 4%;
+    margin-bottom: 3%;
+    justify-content: space-around;
+    margin-right: 70%;
+}
+
+.tarjetas > p > i {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 3%;
+}
+
+.detalles {
+    margin-top: 1%;
+}
+
+.detalles-contenido > h2 {
+    padding-bottom: 3%;
+    border-bottom: 1px solid rgba(48, 124, 126, 0.938);
+}
+
+.detalles-contenido > h4 {
+    margin-top: 3%;
+}
+
+.detalles-contenido > p {
+    margin-top: 3%;
+}
+
+.opiniones-prod > h3 {
+    margin-bottom: 2%;
+}
+
+.opiniones-prod > button {
+    margin: 3% auto;
+    border-radius: 10px;
+    padding: 1.5%;
+    background-color: #1a1d32;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+.opiniones-prod > hr {
+    margin: 2.5% auto;
+}
+
+.usuario-fecha {
+    display: flex;
+    justify-content: space-between;
+}
+
+.opiniones-prod > p {
+    margin-top: 2%;
+}
+
+
+
+
+
+
+
+
+@media (min-width: 375px) and (max-width: 799px) {
+    
+    .logo > a {
+        margin-left: 20%;
+    }
+
+    .texto1, .texto {
+        position: absolute;
+        top: -25%;
+        left: -10%;
+        bottom: 100%;
+        width: 70%;
+    }
+    
+    .texto > h2,
+    .texto > p, 
+    .texto1 > h2, 
+    .texto1 > p{
+        margin-bottom: 7%;
+        font-size: 10px;
+        bottom: 100%;
+        right: 70%;
+    }
+
+    .texto > button, 
+    .texto1 > button{
+        margin: 0;
+        padding: 2%;
+        width: 50%;
+        font-size: 10px;
+        bottom: 100%;
+        right: 70%;
+
+    }
+
+    .top__productos{
+        grid-template-columns: repeat(2, 1fr);
+        width: 90%;
+    }
+
+    .promociones {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .text-promos{
+        margin: 8% auto;
+    }
+
+    .promo-text{
+        top: 1%;
+    }
+
+    #promo-text-arriba, #promo-text-abajo {
+        font-size: 11px;
+        top: 100%;
+    }
+
+    .contenedorpie{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr 0.3fr 5fr 2.5fr 0.3fr 1fr 1fr 0.3fr 1.8fr;
+        
+    }
+
+    .mifarma{
+        grid-column: 1/3;
+        grid-row: 1/2;
+    }
+
+    .linea-top{
+        grid-column: 1/3;
+        grid-row: 2/3;
+    }
+
+    .servicio{
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+
+    .legal {
+        grid-column: 2/3;
+        grid-row: 3/4;
+        margin-left: 15%;
+    }
+
+    .psur {
+        grid-column: 1/2;
+        grid-row: 4/5;
+    }
+
+    .siguenos {
+        grid-column: 2/3;
+        grid-row: 4/5;
+        margin-left: 15%;
+    }
+
+    .linea-medium {
+        grid-column: 1/3;
+        grid-row: 5/6;
+    }
+
+    .entregas {
+        grid-column: 1/3;
+        grid-row: 6/7;
+    }
+
+    .confianza {
+        grid-column: 1/2;
+        grid-row: 7/8;
+    }
+
+    .opiniones{
+        grid-column: 2/3;
+        grid-row: 7/8;
+        margin-left: 15%;
+    }
+
+    .linea-bottom {
+        grid-column: 1/3;
+        grid-row: 8/9;
+    }
+
+    .pago {
+        grid-column: 1/3;
+        grid-row: 9/10;
+    }
+
+    .mifarma > img {
+        width: 20%;
+    }
+
+    .mapa {
+        width: 200%;
+    }
+
+    .pago > p > i{
+        padding: 10%;
+    }
+
+    .prod-iraltone{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.2fr repeat(2, 1fr) 3.5fr;
+    }
+
+    .compra {
+        grid-template-rows: 0.2fr 1fr 1fr;
+    }
+
+    .titulo > h1 {
+        font-size: 30px;
+    }
+
+    .imagen {
+        width: 100%;
+        height: 60%;
+    }
+
+    .precio{
+        justify-content: initial;
+        margin: 0;
+        padding: 0;
+    }
+
+    .precio > h2 {
+        font-size: 20px;
+    }
+
+    .cantidad {
+        font-size: 13px;
+    }
+
+    .cantidad > input {
+        width: 21%;
+        height: 20%;
+        font-size: 15px;
+    }
+
+    .cantidad > button {
+        width: 75%;
+        height: 20%;
+        font-size: 12.5px;
+    
+    }
+
+    .psur-cash{
+        margin: 0;
+    }
+
+    .psur-cash > h4{
+        margin: 0;
+    }
+
+    .tarjetas{
+        padding: 10%;
+    }
+
+    .tarjetas > p{
+        margin: auto 15%;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+@media (min-width: 800px) and (max-width: 1200px) {
+
+    .logo > a {
+        margin: auto 40%;
+    }
+
+    .menu-expansible > ul {
+        padding: 0 15%;
+    }
+
+    .texto, .texto1 {
+        top: -8%;
+        width: 60%;
+        left: -3%;
+    }
+
+    .texto > h2,
+    .texto > p,
+    .texto1 > h2,
+    .texto1 > p {
+        font-size: 18px;
+    }
+
+    .top__productos{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .top__productos__producto{
+        margin-left: 4%;
+        width: 100%;
+    }
+
+    #promo-text-arriba, #promo-text-abajo{
+        font-size: 10px;
+    }
+
+    .promo-text{
+        top: 3%;
+    }
+
+    .contenedorpie{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr 0.3fr 3.5fr 1.8fr 0.3fr 0.4fr 0.4fr 0.3fr 0.4fr;
+    }
+
+    .mifarma{
+        grid-column: 1/3;
+        grid-row: 1/2;
+    }
+
+    .mifarma > img {
+        width: 15%;
+    }
+
+    .linea-top{
+        grid-column: 1/3;
+        grid-row: 2/3;
+    }
+
+    .servicio{
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+
+    .legal {
+        grid-column: 2/3;
+        grid-row: 3/4;
+        margin-left: 25%;
+    }
+
+    .psur {
+        grid-column: 1/2;
+        grid-row: 4/5;
+    }
+
+    .siguenos {
+        grid-column: 2/3;
+        grid-row: 4/5;
+        margin-left: 25%;
+    }
+
+    .linea-medium {
+        grid-column: 1/3;
+        grid-row: 5/6;
+    }
+
+    .entregas {
+        grid-column: 1/3;
+        grid-row: 6/7;
+    }
+
+    .confianza {
+        grid-column: 1/2;
+        grid-row: 7/8;
+    }
+
+    .opiniones{
+        grid-column: 2/3;
+        grid-row: 7/8;
+        margin-left: 25%;
+    }
+
+    .linea-bottom {
+        grid-column: 1/3;
+        grid-row: 8/9;
+    }
+
+    .pago {
+        grid-column: 1/3;
+        grid-row: 9/10;
+    }
+
+    .mapa {
+        margin-top: 15%;
+        width: 190%;
+        margin-left: 5%;
+    }
+
+    .pago > p > i {
+        padding: 0;
+    }
+
+    .prod-iraltone{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.2fr repeat(2, 1fr) 3.5fr;
+    }
+
+    .compra {
+        grid-template-rows: 0.2fr 1fr 1fr;
+    }
+
+    .titulo > h1 {
+        font-size: 30px;
+    }
+
+    .imagen {
+        width: 100%;
+        height: 60%;
+    }
+
+    .precio{
+        justify-content: initial;
+        margin: 0;
+        padding: 0;
+    }
+
+    .precio > h2 {
+        font-size: 20px;
+    }
+
+    .cantidad {
+        font-size: 13px;
+    }
+
+    .cantidad > input {
+        width: 21%;
+        height: 40%;
+        font-size: 20px;
+    }
+
+    .cantidad > button {
+        width: 75%;
+        height: 40%;
+        font-size: 20px;
+        
+    
+    }
+
+    .psur-cash{
+        margin: 0;
+    }
+
+    .psur-cash > h4{
+        margin: 0;
+    }
+
+    .tarjetas{
+        padding: 10%;
+    }
+
+    .tarjetas > p{
+        margin: auto 15%;
+    }
+
+
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    body {
+      background-color: black;
+      color: white;
+    }
+    .container-menu{
+        color: white;
+    }
+
+    .text-topventas, .text-promos{
+        color: white;
+    }
+
+    .top__productos{
+        color: white;
+    }
+
+    .top__productos__producto > a > p{
+        color: white;
+    }
+
+    .descripcion_body-texto{
+        color: white;
+    }
+
+    .prod-contenedor{
+        color: white;
+    }
+
+    .formulario{
+        color: white;
+    }
+
+  }
+  

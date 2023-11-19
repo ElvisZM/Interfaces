@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Roche Posay Lipikar Baume AP + M | P.Sur Pharmacy</title>
+    <link rel="stylesheet" href="proyectofarmacia.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body>
+
+    <div class="container-menu">
+        <div class="header">
+            <div class="logo">
+                <a href="index.html"><img src="Logo.jpg" alt="logotipo web"/></a>
+            </div>
+            <div class="menu-expansible">
+                <ul>
+                    <!-- Elemento del menú "Categorías" con un submenu-->
+                    <li><a href="#">Categorías <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="submenu">
+                            <!-- Elementos del submenú de "Categorías" -->
+                            <li><a href="#">Productos de belleza</a></li>
+                            <li><a href="#">Productos de cuidado personal</a></li>
+                            <li><a href="#">Productos para bebé y mamá</a></li>
+                            <li><a href="#">Complejos vitamínicos</a></li>
+                            <li><a href="#">Herbolario online</a></li>
+                            <li><a href="#">Productos dietéticos</a></li>
+                        </ul>
+                    </li>
+                    <!-- Elemento del menú "Promociones" -->
+                    <li><a href="#">Promociones</a></li>
+                    <!-- Elemento del menú "Packs Ahorro" -->
+                    <li><a href="#">Packs Ahorro</a></li>
+                    <!-- Elemento del menú "Novedades" -->
+                    <li><a href="#">Novedades</a></li>
+                    <!-- Elemento del menú "Marcas" -->
+                    <li><a href="#">Marcas</a></li>
+        
+                    <li class="login"><a href="#"><i class="fa-regular fa-user"></i> Cuenta </a>
+                        <ul class="submenulogin">
+                            <!-- Elementos del submenú "LOGIN" -->
+                            <li><i class="fa-solid fa-user"></i> </li>
+                            <li><input type="text" name="" id="usuario" placeholder="Usuario"></li>
+                            <li><i class="fa-solid fa-lock"></i> </li>
+                            <li><input type="password" name="" id="contraseña" placeholder="********"></li>
+                            <li><a href=""><button>Acceder</button></a></li>
+                            <li><h4>¿Nuevo cliente?</h4></li>
+                            <li><p>Crea una cuenta en segundos.</p></li>
+                            <li><a href="signup.html"><button>Crear Cuenta</button></a></li>
+                            <li><p id="ó"><b> O usar </b></p></li>
+                            <li><p id="parrafo-google-apple">
+                                    <div class="google-apple">
+                                        <button><i class="fa-brands fa-google fa-2xl"></i></button>
+                                        <button><i class="fa-brands fa-apple fa-2xl"></i></button>
+                                    </div>
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+        
+    <div class="prod-contenedor">
+        <div class="prod-iraltone"> <!--Grid 4 filas x 2 columnas
+
+                                        titulo titulo   
+                                        imagen compra
+                                        imagen compra
+                                        detalles opiniones           -->
+            <div class="titulo">
+                <h1>La Roche Posay Lipikar Baume AP+M 400 ml</h1>
+                <p><a href="">La Roche Posay</a> - Bálsamo - 400 ml</p>
+            </div>
+
+            <div class="imagen">
+                <img id="img1" src="p-laroche.webp" alt="">
+                <img id="img2" src="p-laroche2.webp" alt="">
+                <img id="img3" src="p-laroche3.webp" alt="">
+                <img id="img4" src="p-laroche4.webp" alt="">
+            </div>
+
+            <div class="compra">
+                <div class="precio">
+                    <h2>15,23 €</h2>
+                    <h4>38.08 € / 1 L</h4>
+                </div>
+
+                <div class="cantidad">
+                    <h4>Disponible</h4>
+                    
+                        <label for="precio"><h4>Cantidad: </h4></label>
+                        <input type="number" name="cantidad" min="1" max="20"
+                        step="1"
+                        value="1" />
+                        <button><i class="fa-solid fa-basket-shopping" style="color: white;"></i> Añadir al carrito</button>
+                    
+                </div>
+
+                <div class="psur-cash">
+                    <h4><i class="fa-solid fa-truck-fast"></i> Entrega estimada Lunes</h4>
+                    <div class="cash">
+                        <p><i class="fa-solid fa-coins"></i> <b>Gana +0,15 € en PSur Cash</b></p>
+                        <p>Acumula PSur Cash en tu monedero MyPSur.</p>
+                    </div>
+                </div>
+
+                <div class="envio">
+                    <div class="envio-detalle">
+                        <p><i class="fa-solid fa-box" style="color:rgba(48, 124, 126, 0.938);"></i> <b>Envío gratis</b> a partir de 49 €</p>
+                        <p><i class="fa-solid fa-coins" style="color: rgba(48, 124, 126, 0.938);"></i> Acumula puntos en cada compra</p>
+                        <p><i class="fa-solid fa-lock" style="color:rgba(48, 124, 126, 0.938);"></i> Pago 100% <b>seguro</b></p>
+                        <div class="tarjetas">
+                            <p><i class="fa-brands fa-cc-visa fa-2xl"></i> <i class="fa-brands fa-cc-mastercard fa-2xl"></i> <i class="fa-brands fa-cc-amex fa-2xl"></i> <i class="fa-brands fa-cc-paypal fa-2xl"></i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detalles">
+                <div class="detalles-contenido">
+                    <h2>Detalles de producto</h2>
+                    <h4><i class="fa-solid fa-file-lines"></i> Descripción</h4>
+                    <p>Tratamiento hidratante que calma y alivia los picores y la irritación en <b>pieles atópicas, sensibles, muy secas e irritadas.</b></p>
+                    <p><b>BENEFICIOS</b> - Apto para toda la familia: bebés, niños/as y adultos. Indicado para rostro y cuerpo.</p>
+                    <p>- Suaviza inmediatamente y rompe el círculo vicioso de rascarse la piel para restaurar la comodidad duradera.</p>
+                    <p>- Calma la piel del picor. Eficacia de hasta 24 horas.</p>
+                    <p>- Previene la reaparición del brote de sequedad severa.</p>
+                    <p><b>Consejo técnico</b></p>
+                    <p> Este tratamiento hidratante está especialmente indicado para el cuidado de la piel sensible, muy seca, irritada y con picores que provocan el rascado y para pieles con tendencia atópica.Utilizar preferentemente después de limpiar la piel con un limpiador suave sin jabón.</p>
+                </div>
+            </div>
+
+
+
+            <div class="opiniones-prod">
+                <h3>Opiniones</h3>
+                <h3>4.8</h3>
+                <h3><i class="fa-solid fa-star" style="color: yellow;"></i><i class="fa-solid fa-star" style="color: yellow;"></i><i class="fa-solid fa-star" style="color: yellow;"></i><i class="fa-solid fa-star" style="color: yellow;"></i><i class="fa-solid fa-star" style="color: yellow;"></i></h3>
+                <h5>(334 Opiniones)</h5>
+                <button>Tu opinión es importante para nosotros</button>
+                <hr/>
+                <div class="usuario-fecha">
+                    <p><i class="fa-solid fa-star" style="color: yellow;"></i> <i class="fa-solid fa-star" style="color: yellow;"></i> <i class="fa-solid fa-star" style="color: yellow;"></i> <i class="fa-solid fa-star" style="color: yellow;"></i> <i class="fa-solid fa-star" style="color: yellow;"></i> Antonio V.</p>
+                    <p>23/6/23</p>
+                </div>
+                <p>La usamos para nuestro bebé, porque tenía la piel bastante sensible, y le va de maravilla. Ya no le salen rojeces ni salpullidos.</p>
+                <hr/>
+                <div class="usuario-fecha">
+                    <p><i class="fa-solid fa-star" style="color: yellow;"></i> <i class="fa-solid fa-star" style="color: yellow;"></i> <i class="fa-solid fa-star" style="color: yellow;"></i> <i class="fa-solid fa-star" style="color: yellow;"></i> <i class="fa-solid fa-star" style="color: yellow;"></i> Ana A.</p>
+                    <p>20/6/23</p>
+                </div>
+                <p>Bueno, pues este no puede faltar en mi casa ,suelo comprarlo de dos en dos y siempre tengo uno de reserva. Se extiende bien y no es grasienta para nada, aporta la elasticidad que la piel necesita.</p>
+                <hr/>
+                <div class="usuario-fecha">
+                    <p><i class="fa-solid fa-star" style="color: yellow;"></i> <i class="fa-solid fa-star" style="color: yellow;"></i> <i class="fa-solid fa-star" style="color: yellow;"></i> <i class="fa-solid fa-star" style="color: yellow;"></i> <i class="fa-solid fa-star" style="color: yellow;"></i> Diyana M.</p>
+                    <p>6/6/23</p>
+                </div>
+                <p>Top producto</p>
+                <hr/>
+                <div class="usuario-fecha">
+                    <p><i class="fa-solid fa-star" style="color: yellow;"></i> <i class="fa-solid fa-star" style="color: yellow;"></i> <i class="fa-solid fa-star" style="color: yellow;"></i> <i class="fa-solid fa-star" style="color: yellow;"></i> <i class="fa-solid fa-star" style="color: yellow;"></i> Pilat G.</p>
+                    <p>23/3/23</p>
+                </div>
+                <p>Muy buenos productos</p>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="footer">
+        <div class="contenedorpie">
+
+            <div class="mifarma">
+                <img src="Logo.jpg" alt="">
+                <p>P.Sur Pharmacy España</p>
+            </div>
+            <div class="linea-top">
+                <hr/>
+            </div>
+            
+
+            <div class="servicio">
+                <h2>Servicio & contacto</h2>
+                <p><a href="">Preguntas frecuentes</a></p>
+                <p><a href="">Contáctanos por e-mail</a></p>
+                <p><a href="">Habla con nosotros +34 955 123 456</a></p>
+                <p>L-V 09:00h - 18:00h</p>
+                <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6342.763463510203!2d-5.980508029460926!3d37.357143493999416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126e6324845c63%3A0xec11c55d97d1a400!2sFarmacia!5e0!3m2!1ses!2ses!4v1700120217539!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <div class="legal">
+                <h2>Legal</h2>
+                <p><a href="">Entrega y devolución</a></p>
+                <p><a href="">Términos y condiciones</a></p>
+                <p><a href="">Política de cookies</a></p>
+                <p><a href="">Privacidad</a></p>
+                <p><a href="">Bases Legales</a></p>
+            </div>
+
+            <div class="psur">
+                <h2>Polígono Sur Pharmacy</h2>
+                <p><a href="">Sobre nosotros</a></p>
+                <p><a href="">Promociones</a></p>
+                <p><a href="">Descarga nuestra APP</a></p>
+                <p><a href="">Blog</a></p>
+                <p><a href="">Diccionario de Farmacia</a></p>
+                <p><a href="">Black Friday</a></p>
+            </div>
+
+            <div class="siguenos">
+                <h2>Síguenos</h2>
+                <p>
+                <a href=""><i class="fa-brands fa-facebook fa-2xl"></i></a>
+                <a href=""><i class="fa-brands fa-instagram fa-2xl"></i></a>
+                <a href=""><i class="fa-brands fa-linkedin-in fa-2xl"></i></a>
+                <a href=""><i class="fa-brands fa-pinterest fa-2xl"></i></a>
+                </p>
+                <p>
+                <a href=""><i class="fa-brands fa-x-twitter fa-2xl"></i></a>
+                <a href=""><i class="fa-brands fa-youtube fa-2xl"></i></a>
+                <a href=""><i class="fa-brands fa-tiktok fa-2xl"></i></a>
+                </p>
+            </div>
+
+            <div class="linea-medium">
+                <hr/>
+            </div>
+            
+            <div class="entregas">
+                <h4><i class="fa-solid fa-truck-fast "></i> Entregas de 24-48h</h4>
+                <p>Envíos gratuitos a partir de 49€</p>
+                <p><i class="fa-brands fa-fedex fa-2xl"></i></p>
+                <p><i class="fa-brands fa-dhl fa-2xl"></i></p>
+                
+            </div>
+
+            <div class="confianza">
+                <p><i class="fa-regular fa-circle-check"></i> Tienda de confianza</p>
+                <p>Solo ofrecemos métodos de pago seguros y de confianza</p>
+            </div>
+            
+            
+            <div class="opiniones">
+                <p>Opiniones de los usuarios</p>
+                <p><i class="fa-brands fa-google fa-xl"></i> 4,86 / 5.00</p>
+            </div>
+
+            <div class="linea-bottom">
+                <hr/>
+            </div>
+
+            <div class="pago">
+                <h2>&copy;P.SUR PHARMACY</h2>
+                <p><i class="fa-solid fa-lock"></i> Pago seguro: <i class="fa-brands fa-cc-visa fa-2xl"></i> <i class="fa-brands fa-cc-mastercard fa-2xl"></i> <i class="fa-brands fa-cc-amex fa-2xl"></i> <i class="fa-brands fa-cc-paypal fa-2xl"></i></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
